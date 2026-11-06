@@ -61,7 +61,7 @@ export function SiteHeader() {
               <div key={item.to} className="relative" onMouseEnter={() => setProgramsOpen(true)} onMouseLeave={() => setProgramsOpen(false)}>
                 <Link
                   to="/programs"
-                  className={cn("flex items-center gap-1 rounded-full px-3 py-2 text-sm font-medium transition-colors hover:text-primary", isActive(pathname, item.to) && "text-primary")}
+                  className={cn("flex items-center gap-1 whitespace-nowrap rounded-full px-2.5 py-2 text-sm font-medium transition-colors hover:text-primary", isActive(pathname, item.to) && "text-primary")}
                   aria-haspopup="true"
                   aria-expanded={programsOpen}
                   onFocus={() => setProgramsOpen(true)}
@@ -106,7 +106,7 @@ export function SiteHeader() {
               <Link
                 key={item.to}
                 to={item.to}
-                className={cn("rounded-full px-3 py-2 text-sm font-medium transition-colors hover:text-primary", isActive(pathname, item.to) && "bg-secondary text-primary")}
+                className={cn("whitespace-nowrap rounded-full px-2.5 py-2 text-sm font-medium transition-colors hover:text-primary", isActive(pathname, item.to) && "bg-secondary text-primary")}
               >
                 {item.label}
               </Link>

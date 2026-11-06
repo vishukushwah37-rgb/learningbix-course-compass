@@ -28,3 +28,11 @@ use the editor.
   own key and store it in Secrets.
 - **Secrets.** Lovable manages them. Do not put secret values in the repo.
 <!-- LOVABLE:END -->
+
+## Project rules
+- Routing is TanStack Router file routes (not React Router DOM); dashboards live under `src/routes/_authenticated/` and render their own shell — `__root.tsx` hides the marketing header/footer for app-area paths.
+- Public catalogue reads (products, courses) go through `src/lib/catalog.functions.ts` with the publishable key so pages render on the server.
+- Store pricing rules live only in `src/lib/pricing.ts`, shared by the cart and server-side order creation.
+- Roles live in `user_roles`; signup may only create student/parent (enforced in the `handle_new_user` trigger); other roles are granted by admins.
+- Quiz scoring and lesson completion run in security-definer database functions (`submit_quiz`, `complete_lesson`) so answer keys never reach students.
+- Site images are hosted assets; URLs are collected in `src/lib/images.ts`.
