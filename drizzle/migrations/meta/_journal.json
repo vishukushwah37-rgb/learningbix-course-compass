@@ -1,0 +1,27 @@
+{
+  "version": "7",
+  "dialect": "postgresql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "7",
+      "when": 1793958504962,
+      "tag": "0000_learningbix_core_schema",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1793958600055,
+      "tag": "0001_learningbix_seed_catalog",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1793958648115,
+      "tag": "0002_media_bucket_policies",
+      "breakpoints": true
+    }
+  ]
+}

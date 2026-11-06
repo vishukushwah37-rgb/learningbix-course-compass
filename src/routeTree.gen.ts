@@ -10,33 +10,271 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AboutRouteImport } from './routes/about'
+import { Route as BixcodeRouteImport } from './routes/bixcode'
+import { Route as BookFreeTrialRouteImport } from './routes/book-free-trial'
+import { Route as CartRouteImport } from './routes/cart'
+import { Route as ContactUsRouteImport } from './routes/contact-us'
+import { Route as FranchiseeRouteImport } from './routes/franchisee'
+import { Route as LoginRouteImport } from './routes/login'
+import { Route as OrdersRouteImport } from './routes/orders'
+import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
+import { Route as SchoolRouteImport } from './routes/school'
+import { Route as TermsRouteImport } from './routes/terms'
+import { Route as VerifyCertificateRouteImport } from './routes/verify-certificate'
+import { Route as CoursesSlugRouteImport } from './routes/courses.$slug'
+import { Route as LearningCenterIndexRouteImport } from './routes/learning-center.index'
+import { Route as ProgramsIndexRouteImport } from './routes/programs.index'
+import { Route as ProgramsSlugRouteImport } from './routes/programs.$slug'
+import { Route as ShopIndexRouteImport } from './routes/shop.index'
+import { Route as ShopSlugRouteImport } from './routes/shop.$slug'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BixcodeRoute = BixcodeRouteImport.update({
+  id: '/bixcode',
+  path: '/bixcode',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BookFreeTrialRoute = BookFreeTrialRouteImport.update({
+  id: '/book-free-trial',
+  path: '/book-free-trial',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CartRoute = CartRouteImport.update({
+  id: '/cart',
+  path: '/cart',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactUsRoute = ContactUsRouteImport.update({
+  id: '/contact-us',
+  path: '/contact-us',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FranchiseeRoute = FranchiseeRouteImport.update({
+  id: '/franchisee',
+  path: '/franchisee',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LoginRoute = LoginRouteImport.update({
+  id: '/login',
+  path: '/login',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OrdersRoute = OrdersRouteImport.update({
+  id: '/orders',
+  path: '/orders',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrivacyPolicyRoute = PrivacyPolicyRouteImport.update({
+  id: '/privacy-policy',
+  path: '/privacy-policy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SchoolRoute = SchoolRouteImport.update({
+  id: '/school',
+  path: '/school',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TermsRoute = TermsRouteImport.update({
+  id: '/terms',
+  path: '/terms',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const VerifyCertificateRoute = VerifyCertificateRouteImport.update({
+  id: '/verify-certificate',
+  path: '/verify-certificate',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CoursesSlugRoute = CoursesSlugRouteImport.update({
+  id: '/courses/$slug',
+  path: '/courses/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LearningCenterIndexRoute = LearningCenterIndexRouteImport.update({
+  id: '/learning-center/',
+  path: '/learning-center/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProgramsIndexRoute = ProgramsIndexRouteImport.update({
+  id: '/programs/',
+  path: '/programs/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProgramsSlugRoute = ProgramsSlugRouteImport.update({
+  id: '/programs/$slug',
+  path: '/programs/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ShopIndexRoute = ShopIndexRouteImport.update({
+  id: '/shop/',
+  path: '/shop/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ShopSlugRoute = ShopSlugRouteImport.update({
+  id: '/shop/$slug',
+  path: '/shop/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/bixcode': typeof BixcodeRoute
+  '/book-free-trial': typeof BookFreeTrialRoute
+  '/cart': typeof CartRoute
+  '/contact-us': typeof ContactUsRoute
+  '/franchisee': typeof FranchiseeRoute
+  '/login': typeof LoginRoute
+  '/orders': typeof OrdersRoute
+  '/privacy-policy': typeof PrivacyPolicyRoute
+  '/school': typeof SchoolRoute
+  '/terms': typeof TermsRoute
+  '/verify-certificate': typeof VerifyCertificateRoute
+  '/courses/$slug': typeof CoursesSlugRoute
+  '/programs/$slug': typeof ProgramsSlugRoute
+  '/shop/$slug': typeof ShopSlugRoute
+  '/learning-center/': typeof LearningCenterIndexRoute
+  '/programs/': typeof ProgramsIndexRoute
+  '/shop/': typeof ShopIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/bixcode': typeof BixcodeRoute
+  '/book-free-trial': typeof BookFreeTrialRoute
+  '/cart': typeof CartRoute
+  '/contact-us': typeof ContactUsRoute
+  '/franchisee': typeof FranchiseeRoute
+  '/login': typeof LoginRoute
+  '/orders': typeof OrdersRoute
+  '/privacy-policy': typeof PrivacyPolicyRoute
+  '/school': typeof SchoolRoute
+  '/terms': typeof TermsRoute
+  '/verify-certificate': typeof VerifyCertificateRoute
+  '/courses/$slug': typeof CoursesSlugRoute
+  '/programs/$slug': typeof ProgramsSlugRoute
+  '/shop/$slug': typeof ShopSlugRoute
+  '/learning-center': typeof LearningCenterIndexRoute
+  '/programs': typeof ProgramsIndexRoute
+  '/shop': typeof ShopIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/bixcode': typeof BixcodeRoute
+  '/book-free-trial': typeof BookFreeTrialRoute
+  '/cart': typeof CartRoute
+  '/contact-us': typeof ContactUsRoute
+  '/franchisee': typeof FranchiseeRoute
+  '/login': typeof LoginRoute
+  '/orders': typeof OrdersRoute
+  '/privacy-policy': typeof PrivacyPolicyRoute
+  '/school': typeof SchoolRoute
+  '/terms': typeof TermsRoute
+  '/verify-certificate': typeof VerifyCertificateRoute
+  '/courses/$slug': typeof CoursesSlugRoute
+  '/programs/$slug': typeof ProgramsSlugRoute
+  '/shop/$slug': typeof ShopSlugRoute
+  '/learning-center/': typeof LearningCenterIndexRoute
+  '/programs/': typeof ProgramsIndexRoute
+  '/shop/': typeof ShopIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/bixcode'
+    | '/book-free-trial'
+    | '/cart'
+    | '/contact-us'
+    | '/franchisee'
+    | '/login'
+    | '/orders'
+    | '/privacy-policy'
+    | '/school'
+    | '/terms'
+    | '/verify-certificate'
+    | '/courses/$slug'
+    | '/programs/$slug'
+    | '/shop/$slug'
+    | '/learning-center/'
+    | '/programs/'
+    | '/shop/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/about'
+    | '/bixcode'
+    | '/book-free-trial'
+    | '/cart'
+    | '/contact-us'
+    | '/franchisee'
+    | '/login'
+    | '/orders'
+    | '/privacy-policy'
+    | '/school'
+    | '/terms'
+    | '/verify-certificate'
+    | '/courses/$slug'
+    | '/programs/$slug'
+    | '/shop/$slug'
+    | '/learning-center'
+    | '/programs'
+    | '/shop'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/bixcode'
+    | '/book-free-trial'
+    | '/cart'
+    | '/contact-us'
+    | '/franchisee'
+    | '/login'
+    | '/orders'
+    | '/privacy-policy'
+    | '/school'
+    | '/terms'
+    | '/verify-certificate'
+    | '/courses/$slug'
+    | '/programs/$slug'
+    | '/shop/$slug'
+    | '/learning-center/'
+    | '/programs/'
+    | '/shop/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
+  BixcodeRoute: typeof BixcodeRoute
+  BookFreeTrialRoute: typeof BookFreeTrialRoute
+  CartRoute: typeof CartRoute
+  ContactUsRoute: typeof ContactUsRoute
+  FranchiseeRoute: typeof FranchiseeRoute
+  LoginRoute: typeof LoginRoute
+  OrdersRoute: typeof OrdersRoute
+  PrivacyPolicyRoute: typeof PrivacyPolicyRoute
+  SchoolRoute: typeof SchoolRoute
+  TermsRoute: typeof TermsRoute
+  VerifyCertificateRoute: typeof VerifyCertificateRoute
+  CoursesSlugRoute: typeof CoursesSlugRoute
+  ProgramsSlugRoute: typeof ProgramsSlugRoute
+  ShopSlugRoute: typeof ShopSlugRoute
+  LearningCenterIndexRoute: typeof LearningCenterIndexRoute
+  ProgramsIndexRoute: typeof ProgramsIndexRoute
+  ShopIndexRoute: typeof ShopIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +286,155 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/bixcode': {
+      id: '/bixcode'
+      path: '/bixcode'
+      fullPath: '/bixcode'
+      preLoaderRoute: typeof BixcodeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/book-free-trial': {
+      id: '/book-free-trial'
+      path: '/book-free-trial'
+      fullPath: '/book-free-trial'
+      preLoaderRoute: typeof BookFreeTrialRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/cart': {
+      id: '/cart'
+      path: '/cart'
+      fullPath: '/cart'
+      preLoaderRoute: typeof CartRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact-us': {
+      id: '/contact-us'
+      path: '/contact-us'
+      fullPath: '/contact-us'
+      preLoaderRoute: typeof ContactUsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/franchisee': {
+      id: '/franchisee'
+      path: '/franchisee'
+      fullPath: '/franchisee'
+      preLoaderRoute: typeof FranchiseeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/login': {
+      id: '/login'
+      path: '/login'
+      fullPath: '/login'
+      preLoaderRoute: typeof LoginRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/orders': {
+      id: '/orders'
+      path: '/orders'
+      fullPath: '/orders'
+      preLoaderRoute: typeof OrdersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/privacy-policy': {
+      id: '/privacy-policy'
+      path: '/privacy-policy'
+      fullPath: '/privacy-policy'
+      preLoaderRoute: typeof PrivacyPolicyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/school': {
+      id: '/school'
+      path: '/school'
+      fullPath: '/school'
+      preLoaderRoute: typeof SchoolRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/terms': {
+      id: '/terms'
+      path: '/terms'
+      fullPath: '/terms'
+      preLoaderRoute: typeof TermsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/verify-certificate': {
+      id: '/verify-certificate'
+      path: '/verify-certificate'
+      fullPath: '/verify-certificate'
+      preLoaderRoute: typeof VerifyCertificateRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/courses/$slug': {
+      id: '/courses/$slug'
+      path: '/courses/$slug'
+      fullPath: '/courses/$slug'
+      preLoaderRoute: typeof CoursesSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/learning-center/': {
+      id: '/learning-center/'
+      path: '/learning-center'
+      fullPath: '/learning-center/'
+      preLoaderRoute: typeof LearningCenterIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/programs/': {
+      id: '/programs/'
+      path: '/programs'
+      fullPath: '/programs/'
+      preLoaderRoute: typeof ProgramsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/programs/$slug': {
+      id: '/programs/$slug'
+      path: '/programs/$slug'
+      fullPath: '/programs/$slug'
+      preLoaderRoute: typeof ProgramsSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/shop/': {
+      id: '/shop/'
+      path: '/shop'
+      fullPath: '/shop/'
+      preLoaderRoute: typeof ShopIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/shop/$slug': {
+      id: '/shop/$slug'
+      path: '/shop/$slug'
+      fullPath: '/shop/$slug'
+      preLoaderRoute: typeof ShopSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
+  BixcodeRoute: BixcodeRoute,
+  BookFreeTrialRoute: BookFreeTrialRoute,
+  CartRoute: CartRoute,
+  ContactUsRoute: ContactUsRoute,
+  FranchiseeRoute: FranchiseeRoute,
+  LoginRoute: LoginRoute,
+  OrdersRoute: OrdersRoute,
+  PrivacyPolicyRoute: PrivacyPolicyRoute,
+  SchoolRoute: SchoolRoute,
+  TermsRoute: TermsRoute,
+  VerifyCertificateRoute: VerifyCertificateRoute,
+  CoursesSlugRoute: CoursesSlugRoute,
+  ProgramsSlugRoute: ProgramsSlugRoute,
+  ShopSlugRoute: ShopSlugRoute,
+  LearningCenterIndexRoute: LearningCenterIndexRoute,
+  ProgramsIndexRoute: ProgramsIndexRoute,
+  ShopIndexRoute: ShopIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
