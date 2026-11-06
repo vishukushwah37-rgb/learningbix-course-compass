@@ -1,4 +1,3 @@
-import { Link } from "@tanstack/react-router";
 import { AnimatePresence, motion } from "framer-motion";
 import { ChevronLeft, ChevronRight, Quote, Rocket } from "lucide-react";
 import { useEffect, useState } from "react";
@@ -123,11 +122,3 @@ export function IconBadge({ children, tone = "primary" }: { children: React.Reac
 }
 
 export const TONES = ["primary", "violet", "sun", "mint"] as const;
-
-export function LinkButton({ to, children, variant = "default" }: { to: string; children: React.ReactNode; variant?: "default" | "brand" | "outline" }) {
-  return (
-    <Button asChild variant={variant}>
-      <Link to={to}>{children}</Link>
-    </Button>
-  );
-}
