@@ -116,7 +116,7 @@ export function PartnerGrid() {
   );
 }
 
-export function IconBadge({ children, tone = "primary" }: { children: React.ReactNode; tone?: "primary" | "violet" | "sun" | "mint" }) {
+export function IconBadge({ children, tone = "primary" }: { children: React.ReactNode; tone?: "primary" | "violet" | "sun" | "mint" | undefined }) {
   const map = { primary: "bg-primary/10 text-primary", violet: "bg-violet/10 text-violet", sun: "bg-sun/15 text-sun-foreground", mint: "bg-mint/15 text-mint" };
   return <span className={cn("grid size-12 place-items-center rounded-2xl [&_svg]:size-6", map[tone])}>{children}</span>;
 }

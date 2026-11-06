@@ -61,7 +61,7 @@ export function Counter({ to, suffix = "" }: { to: number; suffix?: string }) {
   );
 }
 
-export function Floating({ children, className, delay = 0 }: { children: ReactNode; className?: string; delay?: number }) {
+export function Floating({ children, className, delay = 0 }: { children?: ReactNode; className?: string; delay?: number }) {
   return (
     <motion.div
       className={className}
