@@ -17,7 +17,6 @@ import { Route as CartRouteImport } from './routes/cart'
 import { Route as ContactUsRouteImport } from './routes/contact-us'
 import { Route as FranchiseeRouteImport } from './routes/franchisee'
 import { Route as LoginRouteImport } from './routes/login'
-import { Route as OrdersRouteImport } from './routes/orders'
 import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
 import { Route as SchoolRouteImport } from './routes/school'
 import { Route as TermsRouteImport } from './routes/terms'
@@ -67,11 +66,6 @@ const FranchiseeRoute = FranchiseeRouteImport.update({
 const LoginRoute = LoginRouteImport.update({
   id: '/login',
   path: '/login',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const OrdersRoute = OrdersRouteImport.update({
-  id: '/orders',
-  path: '/orders',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PrivacyPolicyRoute = PrivacyPolicyRouteImport.update({
@@ -134,7 +128,6 @@ export interface FileRoutesByFullPath {
   '/contact-us': typeof ContactUsRoute
   '/franchisee': typeof FranchiseeRoute
   '/login': typeof LoginRoute
-  '/orders': typeof OrdersRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/school': typeof SchoolRoute
   '/terms': typeof TermsRoute
@@ -155,7 +148,6 @@ export interface FileRoutesByTo {
   '/contact-us': typeof ContactUsRoute
   '/franchisee': typeof FranchiseeRoute
   '/login': typeof LoginRoute
-  '/orders': typeof OrdersRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/school': typeof SchoolRoute
   '/terms': typeof TermsRoute
@@ -177,7 +169,6 @@ export interface FileRoutesById {
   '/contact-us': typeof ContactUsRoute
   '/franchisee': typeof FranchiseeRoute
   '/login': typeof LoginRoute
-  '/orders': typeof OrdersRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/school': typeof SchoolRoute
   '/terms': typeof TermsRoute
@@ -200,7 +191,6 @@ export interface FileRouteTypes {
     | '/contact-us'
     | '/franchisee'
     | '/login'
-    | '/orders'
     | '/privacy-policy'
     | '/school'
     | '/terms'
@@ -221,7 +211,6 @@ export interface FileRouteTypes {
     | '/contact-us'
     | '/franchisee'
     | '/login'
-    | '/orders'
     | '/privacy-policy'
     | '/school'
     | '/terms'
@@ -242,7 +231,6 @@ export interface FileRouteTypes {
     | '/contact-us'
     | '/franchisee'
     | '/login'
-    | '/orders'
     | '/privacy-policy'
     | '/school'
     | '/terms'
@@ -264,7 +252,6 @@ export interface RootRouteChildren {
   ContactUsRoute: typeof ContactUsRoute
   FranchiseeRoute: typeof FranchiseeRoute
   LoginRoute: typeof LoginRoute
-  OrdersRoute: typeof OrdersRoute
   PrivacyPolicyRoute: typeof PrivacyPolicyRoute
   SchoolRoute: typeof SchoolRoute
   TermsRoute: typeof TermsRoute
@@ -333,13 +320,6 @@ declare module '@tanstack/react-router' {
       path: '/login'
       fullPath: '/login'
       preLoaderRoute: typeof LoginRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/orders': {
-      id: '/orders'
-      path: '/orders'
-      fullPath: '/orders'
-      preLoaderRoute: typeof OrdersRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/privacy-policy': {
@@ -424,7 +404,6 @@ const rootRouteChildren: RootRouteChildren = {
   ContactUsRoute: ContactUsRoute,
   FranchiseeRoute: FranchiseeRoute,
   LoginRoute: LoginRoute,
-  OrdersRoute: OrdersRoute,
   PrivacyPolicyRoute: PrivacyPolicyRoute,
   SchoolRoute: SchoolRoute,
   TermsRoute: TermsRoute,
