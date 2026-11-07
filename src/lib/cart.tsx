@@ -15,6 +15,8 @@ export type CartItem = {
 };
 
 type CartState = {
+  /** False until the saved cart has been read from this browser. */
+  hydrated: boolean;
   items: CartItem[];
   count: number;
   totals: ReturnType<typeof computeTotals>;
@@ -149,6 +151,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
 
   const value = useMemo<CartState>(
     () => ({
+      hydrated,
       items,
       count: items.reduce((n, i) => n + i.quantity, 0),
       totals: computeTotals(items),
@@ -159,7 +162,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
       wishlist,
       toggleWishlist,
     }),
-    [items, add, setQuantity, remove, clear, wishlist, toggleWishlist],
+    [hydrated, items, add, setQuantity, remove, clear, wishlist, toggleWishlist],
   );
 
   return <CartContext.Provider value={value}>{children}</CartContext.Provider>;
