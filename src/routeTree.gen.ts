@@ -15,9 +15,12 @@ import { Route as BixcodeRouteImport } from './routes/bixcode'
 import { Route as BookFreeTrialRouteImport } from './routes/book-free-trial'
 import { Route as CartRouteImport } from './routes/cart'
 import { Route as ContactUsRouteImport } from './routes/contact-us'
+import { Route as ForgotPasswordRouteImport } from './routes/forgot-password'
 import { Route as FranchiseeRouteImport } from './routes/franchisee'
 import { Route as LoginRouteImport } from './routes/login'
 import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
+import { Route as RegisterRouteImport } from './routes/register'
+import { Route as ResetPasswordRouteImport } from './routes/reset-password'
 import { Route as SchoolRouteImport } from './routes/school'
 import { Route as TermsRouteImport } from './routes/terms'
 import { Route as VerifyCertificateRouteImport } from './routes/verify-certificate'
@@ -59,6 +62,11 @@ const ContactUsRoute = ContactUsRouteImport.update({
   path: '/contact-us',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ForgotPasswordRoute = ForgotPasswordRouteImport.update({
+  id: '/forgot-password',
+  path: '/forgot-password',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const FranchiseeRoute = FranchiseeRouteImport.update({
   id: '/franchisee',
   path: '/franchisee',
@@ -72,6 +80,16 @@ const LoginRoute = LoginRouteImport.update({
 const PrivacyPolicyRoute = PrivacyPolicyRouteImport.update({
   id: '/privacy-policy',
   path: '/privacy-policy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RegisterRoute = RegisterRouteImport.update({
+  id: '/register',
+  path: '/register',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ResetPasswordRoute = ResetPasswordRouteImport.update({
+  id: '/reset-password',
+  path: '/reset-password',
   getParentRoute: () => rootRouteImport,
 } as any)
 const SchoolRoute = SchoolRouteImport.update({
@@ -132,9 +150,12 @@ export interface FileRoutesByFullPath {
   '/book-free-trial': typeof BookFreeTrialRoute
   '/cart': typeof CartRoute
   '/contact-us': typeof ContactUsRoute
+  '/forgot-password': typeof ForgotPasswordRoute
   '/franchisee': typeof FranchiseeRoute
   '/login': typeof LoginRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
+  '/register': typeof RegisterRoute
+  '/reset-password': typeof ResetPasswordRoute
   '/school': typeof SchoolRoute
   '/terms': typeof TermsRoute
   '/verify-certificate': typeof VerifyCertificateRoute
@@ -153,9 +174,12 @@ export interface FileRoutesByTo {
   '/book-free-trial': typeof BookFreeTrialRoute
   '/cart': typeof CartRoute
   '/contact-us': typeof ContactUsRoute
+  '/forgot-password': typeof ForgotPasswordRoute
   '/franchisee': typeof FranchiseeRoute
   '/login': typeof LoginRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
+  '/register': typeof RegisterRoute
+  '/reset-password': typeof ResetPasswordRoute
   '/school': typeof SchoolRoute
   '/terms': typeof TermsRoute
   '/verify-certificate': typeof VerifyCertificateRoute
@@ -175,9 +199,12 @@ export interface FileRoutesById {
   '/book-free-trial': typeof BookFreeTrialRoute
   '/cart': typeof CartRoute
   '/contact-us': typeof ContactUsRoute
+  '/forgot-password': typeof ForgotPasswordRoute
   '/franchisee': typeof FranchiseeRoute
   '/login': typeof LoginRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
+  '/register': typeof RegisterRoute
+  '/reset-password': typeof ResetPasswordRoute
   '/school': typeof SchoolRoute
   '/terms': typeof TermsRoute
   '/verify-certificate': typeof VerifyCertificateRoute
@@ -198,9 +225,12 @@ export interface FileRouteTypes {
     | '/book-free-trial'
     | '/cart'
     | '/contact-us'
+    | '/forgot-password'
     | '/franchisee'
     | '/login'
     | '/privacy-policy'
+    | '/register'
+    | '/reset-password'
     | '/school'
     | '/terms'
     | '/verify-certificate'
@@ -219,9 +249,12 @@ export interface FileRouteTypes {
     | '/book-free-trial'
     | '/cart'
     | '/contact-us'
+    | '/forgot-password'
     | '/franchisee'
     | '/login'
     | '/privacy-policy'
+    | '/register'
+    | '/reset-password'
     | '/school'
     | '/terms'
     | '/verify-certificate'
@@ -240,9 +273,12 @@ export interface FileRouteTypes {
     | '/book-free-trial'
     | '/cart'
     | '/contact-us'
+    | '/forgot-password'
     | '/franchisee'
     | '/login'
     | '/privacy-policy'
+    | '/register'
+    | '/reset-password'
     | '/school'
     | '/terms'
     | '/verify-certificate'
@@ -262,9 +298,12 @@ export interface RootRouteChildren {
   BookFreeTrialRoute: typeof BookFreeTrialRoute
   CartRoute: typeof CartRoute
   ContactUsRoute: typeof ContactUsRoute
+  ForgotPasswordRoute: typeof ForgotPasswordRoute
   FranchiseeRoute: typeof FranchiseeRoute
   LoginRoute: typeof LoginRoute
   PrivacyPolicyRoute: typeof PrivacyPolicyRoute
+  RegisterRoute: typeof RegisterRoute
+  ResetPasswordRoute: typeof ResetPasswordRoute
   SchoolRoute: typeof SchoolRoute
   TermsRoute: typeof TermsRoute
   VerifyCertificateRoute: typeof VerifyCertificateRoute
@@ -321,6 +360,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ContactUsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/forgot-password': {
+      id: '/forgot-password'
+      path: '/forgot-password'
+      fullPath: '/forgot-password'
+      preLoaderRoute: typeof ForgotPasswordRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/franchisee': {
       id: '/franchisee'
       path: '/franchisee'
@@ -340,6 +386,20 @@ declare module '@tanstack/react-router' {
       path: '/privacy-policy'
       fullPath: '/privacy-policy'
       preLoaderRoute: typeof PrivacyPolicyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/register': {
+      id: '/register'
+      path: '/register'
+      fullPath: '/register'
+      preLoaderRoute: typeof RegisterRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/reset-password': {
+      id: '/reset-password'
+      path: '/reset-password'
+      fullPath: '/reset-password'
+      preLoaderRoute: typeof ResetPasswordRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/school': {
@@ -422,9 +482,12 @@ const rootRouteChildren: RootRouteChildren = {
   BookFreeTrialRoute: BookFreeTrialRoute,
   CartRoute: CartRoute,
   ContactUsRoute: ContactUsRoute,
+  ForgotPasswordRoute: ForgotPasswordRoute,
   FranchiseeRoute: FranchiseeRoute,
   LoginRoute: LoginRoute,
   PrivacyPolicyRoute: PrivacyPolicyRoute,
+  RegisterRoute: RegisterRoute,
+  ResetPasswordRoute: ResetPasswordRoute,
   SchoolRoute: SchoolRoute,
   TermsRoute: TermsRoute,
   VerifyCertificateRoute: VerifyCertificateRoute,
