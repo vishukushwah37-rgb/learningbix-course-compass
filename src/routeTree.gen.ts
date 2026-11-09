@@ -23,6 +23,7 @@ import { Route as TermsRouteImport } from './routes/terms'
 import { Route as VerifyCertificateRouteImport } from './routes/verify-certificate'
 import { Route as CoursesSlugRouteImport } from './routes/courses.$slug'
 import { Route as LearningCenterIndexRouteImport } from './routes/learning-center.index'
+import { Route as LearningCenterSlugRouteImport } from './routes/learning-center.$slug'
 import { Route as ProgramsIndexRouteImport } from './routes/programs.index'
 import { Route as ProgramsSlugRouteImport } from './routes/programs.$slug'
 import { Route as ShopIndexRouteImport } from './routes/shop.index'
@@ -98,6 +99,11 @@ const LearningCenterIndexRoute = LearningCenterIndexRouteImport.update({
   path: '/learning-center/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const LearningCenterSlugRoute = LearningCenterSlugRouteImport.update({
+  id: '/learning-center/$slug',
+  path: '/learning-center/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ProgramsIndexRoute = ProgramsIndexRouteImport.update({
   id: '/programs/',
   path: '/programs/',
@@ -133,6 +139,7 @@ export interface FileRoutesByFullPath {
   '/terms': typeof TermsRoute
   '/verify-certificate': typeof VerifyCertificateRoute
   '/courses/$slug': typeof CoursesSlugRoute
+  '/learning-center/$slug': typeof LearningCenterSlugRoute
   '/programs/$slug': typeof ProgramsSlugRoute
   '/shop/$slug': typeof ShopSlugRoute
   '/learning-center/': typeof LearningCenterIndexRoute
@@ -153,6 +160,7 @@ export interface FileRoutesByTo {
   '/terms': typeof TermsRoute
   '/verify-certificate': typeof VerifyCertificateRoute
   '/courses/$slug': typeof CoursesSlugRoute
+  '/learning-center/$slug': typeof LearningCenterSlugRoute
   '/programs/$slug': typeof ProgramsSlugRoute
   '/shop/$slug': typeof ShopSlugRoute
   '/learning-center': typeof LearningCenterIndexRoute
@@ -174,6 +182,7 @@ export interface FileRoutesById {
   '/terms': typeof TermsRoute
   '/verify-certificate': typeof VerifyCertificateRoute
   '/courses/$slug': typeof CoursesSlugRoute
+  '/learning-center/$slug': typeof LearningCenterSlugRoute
   '/programs/$slug': typeof ProgramsSlugRoute
   '/shop/$slug': typeof ShopSlugRoute
   '/learning-center/': typeof LearningCenterIndexRoute
@@ -196,6 +205,7 @@ export interface FileRouteTypes {
     | '/terms'
     | '/verify-certificate'
     | '/courses/$slug'
+    | '/learning-center/$slug'
     | '/programs/$slug'
     | '/shop/$slug'
     | '/learning-center/'
@@ -216,6 +226,7 @@ export interface FileRouteTypes {
     | '/terms'
     | '/verify-certificate'
     | '/courses/$slug'
+    | '/learning-center/$slug'
     | '/programs/$slug'
     | '/shop/$slug'
     | '/learning-center'
@@ -236,6 +247,7 @@ export interface FileRouteTypes {
     | '/terms'
     | '/verify-certificate'
     | '/courses/$slug'
+    | '/learning-center/$slug'
     | '/programs/$slug'
     | '/shop/$slug'
     | '/learning-center/'
@@ -257,6 +269,7 @@ export interface RootRouteChildren {
   TermsRoute: typeof TermsRoute
   VerifyCertificateRoute: typeof VerifyCertificateRoute
   CoursesSlugRoute: typeof CoursesSlugRoute
+  LearningCenterSlugRoute: typeof LearningCenterSlugRoute
   ProgramsSlugRoute: typeof ProgramsSlugRoute
   ShopSlugRoute: typeof ShopSlugRoute
   LearningCenterIndexRoute: typeof LearningCenterIndexRoute
@@ -364,6 +377,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LearningCenterIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/learning-center/$slug': {
+      id: '/learning-center/$slug'
+      path: '/learning-center/$slug'
+      fullPath: '/learning-center/$slug'
+      preLoaderRoute: typeof LearningCenterSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/programs/': {
       id: '/programs/'
       path: '/programs'
@@ -409,6 +429,7 @@ const rootRouteChildren: RootRouteChildren = {
   TermsRoute: TermsRoute,
   VerifyCertificateRoute: VerifyCertificateRoute,
   CoursesSlugRoute: CoursesSlugRoute,
+  LearningCenterSlugRoute: LearningCenterSlugRoute,
   ProgramsSlugRoute: ProgramsSlugRoute,
   ShopSlugRoute: ShopSlugRoute,
   LearningCenterIndexRoute: LearningCenterIndexRoute,
