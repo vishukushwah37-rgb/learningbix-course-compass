@@ -175,7 +175,7 @@ export function DashboardShell({ role, title, subtitle, actions, children }: { r
   );
 }
 
-export function StatCard({ label, value, icon: Icon, tone = "primary", hint }: { label: string; value: ReactNode; icon: LucideIcon; tone?: "primary" | "violet" | "sun" | "mint"; hint?: string }) {
+export function StatCard({ label, value, icon: Icon, tone = "primary", hint }: { label: string; value: ReactNode; icon: LucideIcon; tone?: "primary" | "violet" | "sun" | "mint"; hint?: string | undefined }) {
   const map = { primary: "bg-primary/10 text-primary", violet: "bg-violet/10 text-violet", sun: "bg-sun/15 text-sun-foreground", mint: "bg-mint/15 text-mint" };
   return (
     <div className="rounded-3xl border bg-card p-5 shadow-soft">
