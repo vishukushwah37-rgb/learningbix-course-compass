@@ -6,11 +6,11 @@ import { PROGRAM_OPTIONS } from "@/lib/schemas";
 import { pageMeta } from "@/lib/seo";
 import { img } from "@/lib/images";
 
-type Search = { program?: (typeof PROGRAM_OPTIONS)[number] };
+type Search = { program?: (typeof PROGRAM_OPTIONS)[number] | undefined };
 
 export const Route = createFileRoute("/book-free-trial")({
   validateSearch: (s: Record<string, unknown>): Search => {
-    const p = s.program;
+    const p = s["program"];
     return PROGRAM_OPTIONS.includes(p as never) ? { program: p as Search["program"] } : {};
   },
   head: () => ({ meta: pageMeta("Book a Free Trial Class", "Book a free live robotics, coding, AI or STEM trial class for your child aged 3 to 16.") }),

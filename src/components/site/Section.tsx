@@ -48,12 +48,12 @@ export function PageHero({
   children,
   crumbs,
 }: {
-  eyebrow?: string;
+  eyebrow?: string | undefined;
   title: ReactNode;
   text?: ReactNode;
-  image?: string;
+  image?: string | undefined;
   children?: ReactNode;
-  crumbs?: { label: string; to?: string }[];
+  crumbs?: { label: string; to?: string | undefined }[] | undefined;
 }) {
   return (
     <section className="relative overflow-hidden bg-hero-glow">

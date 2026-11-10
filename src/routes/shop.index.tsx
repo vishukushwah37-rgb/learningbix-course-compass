@@ -18,7 +18,7 @@ import { cn } from "@/lib/utils";
 type ShopSearch = { category?: string };
 
 export const Route = createFileRoute("/shop/")({
-  validateSearch: (s: Record<string, unknown>): ShopSearch => (typeof s.category === "string" ? { category: s.category.slice(0, 60) } : {}),
+  validateSearch: (s: Record<string, unknown>): ShopSearch => (typeof s["category"] === "string" ? { category: s["category"].slice(0, 60) } : {}),
   head: () => ({ meta: pageMeta("Shop Robotics & STEM Kits", "Robotics, electronics, STEM, DIY and coding kits for kids — delivered across India.") }),
   loader: ({ context }) => context.queryClient.ensureQueryData(productsQuery()),
   component: Shop,

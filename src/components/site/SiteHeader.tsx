@@ -163,7 +163,7 @@ export function SiteHeader() {
               <Link to="/login">Login</Link>
             </Button>
           )}
-          <Button asChild variant="brand" className="hidden md:inline-flex">
+          <Button asChild variant="brand" className="hidden md:inline-flex xl:hidden 2xl:inline-flex">
             <Link to="/book-free-trial">Book a Free Trial</Link>
           </Button>
 

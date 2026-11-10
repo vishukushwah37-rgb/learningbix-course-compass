@@ -16,7 +16,7 @@ import { destinationAfterLogin, rememberRedirect, takeRememberedRedirect } from 
 import { pageMeta } from "@/lib/seo";
 
 export const Route = createFileRoute("/login")({
-  validateSearch: (s: Record<string, unknown>): { redirect?: string } => (typeof s.redirect === "string" ? { redirect: s.redirect } : {}),
+  validateSearch: (s: Record<string, unknown>): { redirect?: string } => (typeof s["redirect"] === "string" ? { redirect: s["redirect"] } : {}),
   head: () => ({ meta: pageMeta("Sign In", "Sign in to your LearningBIX account to continue learning, track progress and manage orders.") }),
   component: Login,
 });
