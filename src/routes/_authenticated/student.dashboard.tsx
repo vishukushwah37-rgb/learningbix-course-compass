@@ -19,7 +19,7 @@ function StudentHome() {
   const best = data.attempts.length ? Math.max(...data.attempts.map((a) => (a.total ? Math.round((a.score / a.total) * 100) : 0))) : 0;
   const first = data.student?.full_name.split(" ")[0] ?? "there";
   return (
-    <DashboardShell role="student" title={`Hi ${first}! 👋`} subtitle={data.student ? `Student ID ${data.student.student_code}` : undefined} actions={<Button asChild variant="brand"><Link to="/student/courses">Browse courses</Link></Button>}>
+    <DashboardShell role="student" title={`Hi ${first}! 👋`} subtitle={data.student ? `Student ID ${data.student.student_code}` : undefined} actions={<Button asChild variant="brand"><Link to="/programs">Browse courses</Link></Button>}>
       {!data.student ? (
         <Empty>Your student profile isn't set up yet. Please contact LearningBIX support.</Empty>
       ) : (
@@ -31,9 +31,9 @@ function StudentHome() {
             <StatCard label="Certificates" value={data.certificates.length} icon={Award} tone="mint" />
           </div>
           <div className="grid gap-6 xl:grid-cols-[1.5fr_1fr]">
-            <Panel title="Continue learning" action={<Link to="/student/courses" className="text-sm font-semibold text-primary">All courses</Link>}>
+            <Panel title="Continue learning" action={<Link to="/programs" className="text-sm font-semibold text-primary">All courses</Link>}>
               {data.enrollments.length === 0 ? (
-                <Empty>You haven't enrolled in a course yet. <Link to="/student/courses" className="font-semibold text-primary">Pick one</Link> to get started.</Empty>
+                <Empty>You haven't enrolled in a course yet. <Link to="/programs" className="font-semibold text-primary">Pick one</Link> to get started.</Empty>
               ) : (
                 <ul className="space-y-3">
                   {data.enrollments.slice(0, 4).map((e) => e.courses && (
@@ -43,13 +43,13 @@ function StudentHome() {
                         <div className="truncate font-semibold">{e.courses.title}</div>
                         <div className="mt-2 flex items-center gap-3"><ProgressBar value={e.progress} /><span className="text-xs font-semibold">{e.progress}%</span></div>
                       </div>
-                      <Button asChild size="sm"><Link to="/student/courses/$courseId" params={{ courseId: e.course_id }}><PlayCircle /> {e.progress ? "Resume" : "Start"}</Link></Button>
+                      <Button asChild size="sm"><Link to="/courses/$slug" params={{ slug: e.courses.slug }}><PlayCircle /> {e.progress ? "Resume" : "Start"}</Link></Button>
                     </li>
                   ))}
                 </ul>
               )}
             </Panel>
-            <Panel title="Recent quiz results" action={<Link to="/student/quizzes" className="text-sm font-semibold text-primary">Quizzes</Link>}>
+            <Panel title="Recent quiz results" >
               {data.attempts.length === 0 ? <Empty>No quizzes taken yet.</Empty> : (
                 <ul className="divide-y">
                   {data.attempts.slice(0, 5).map((a) => {
