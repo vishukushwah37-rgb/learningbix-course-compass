@@ -7,7 +7,7 @@ type RazorpayOptions = {
   order_id: string;
   name: string;
   description: string;
-  prefill?: { name?: string; email?: string; contact?: string };
+  prefill?: { name?: string | undefined; email?: string | undefined; contact?: string | undefined };
   theme?: { color?: string };
   handler: (r: RazorpaySuccess) => void;
   modal?: { ondismiss?: () => void };

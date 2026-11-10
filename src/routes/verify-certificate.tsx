@@ -10,7 +10,7 @@ import { verifyCertificate } from "@/lib/certificates.functions";
 import { pageMeta } from "@/lib/seo";
 
 export const Route = createFileRoute("/verify-certificate")({
-  validateSearch: (s: Record<string, unknown>): { code?: string } => (typeof s.code === "string" ? { code: s.code.slice(0, 40) } : {}),
+  validateSearch: (s: Record<string, unknown>): { code?: string } => (typeof s["code"] === "string" ? { code: s["code"].slice(0, 40) } : {}),
   head: () => ({ meta: pageMeta("Verify a Certificate", "Check that a LearningBIX course certificate is genuine using its certificate code.") }),
   component: Verify,
 });

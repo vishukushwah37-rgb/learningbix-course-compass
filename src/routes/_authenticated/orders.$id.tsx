@@ -15,7 +15,7 @@ import { pageMeta } from "@/lib/seo";
 import { cn } from "@/lib/utils";
 
 export const Route = createFileRoute("/_authenticated/orders/$id")({
-  validateSearch: (s: Record<string, unknown>): { placed?: boolean } => (s.placed === true || s.placed === "true" ? { placed: true } : {}),
+  validateSearch: (s: Record<string, unknown>): { placed?: boolean } => (s["placed"] === true || s["placed"] === "true" ? { placed: true } : {}),
   loader: async ({ params, context }) => {
     const order = await context.queryClient.ensureQueryData(orderQuery(params.id));
     if (!order) throw notFound();

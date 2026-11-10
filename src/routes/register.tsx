@@ -17,7 +17,7 @@ import { pageMeta } from "@/lib/seo";
 import { cn } from "@/lib/utils";
 
 export const Route = createFileRoute("/register")({
-  validateSearch: (s: Record<string, unknown>): { redirect?: string } => (typeof s.redirect === "string" ? { redirect: s.redirect } : {}),
+  validateSearch: (s: Record<string, unknown>): { redirect?: string } => (typeof s["redirect"] === "string" ? { redirect: s["redirect"] } : {}),
   head: () => ({ meta: pageMeta("Create an Account", "Join LearningBIX as a student or parent to access courses, quizzes, progress tracking and certificates.") }),
   component: Register,
 });

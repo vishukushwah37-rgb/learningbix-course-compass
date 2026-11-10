@@ -61,7 +61,7 @@ export function ContactForm({ source = "contact" }: { source?: string }) {
   );
 }
 
-export function TrialForm({ defaultProgram }: { defaultProgram?: (typeof PROGRAM_OPTIONS)[number] }) {
+export function TrialForm({ defaultProgram }: { defaultProgram?: (typeof PROGRAM_OPTIONS)[number] | undefined }) {
   const [done, setDone] = useState(false);
   const form = useForm<z.input<typeof trialSchema>, unknown, z.output<typeof trialSchema>>({
     resolver: zodResolver(trialSchema),
