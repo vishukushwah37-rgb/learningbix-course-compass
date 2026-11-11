@@ -40,6 +40,29 @@ export const coursePlayerQuery = (courseId: string) =>
     },
   });
 
+/** Course player data for one signed-in student: curriculum, their enrollment and completed lessons. */
+export const learnQuery = (slug: string, userId: string) =>
+  queryOptions({
+    queryKey: ["learn", slug, userId],
+    queryFn: async () => {
+      const { data: course } = await supabase
+        .from("courses")
+        .select("id, slug, title, short_description, image_url, course_modules(id, title, position, lessons(id, title, content, video_url, pdf_url, duration_minutes, position))")
+        .eq("slug", slug)
+        .maybeSingle();
+      if (!course) return { course: null, enrollment: null, done: [] as string[] };
+
+      const { data: student } = await supabase.from("students").select("id").eq("user_id", userId).maybeSingle();
+      if (!student) return { course, enrollment: null, done: [] as string[] };
+
+      const [enr, prog] = await Promise.all([
+        supabase.from("enrollments").select("id, progress, status, enrolled_at").eq("student_id", student.id).eq("course_id", course.id).maybeSingle(),
+        supabase.from("learning_progress").select("lesson_id").eq("student_id", student.id),
+      ]);
+      return { course, enrollment: enr.data ?? null, done: (prog.data ?? []).map((p) => p.lesson_id) };
+    },
+  });
+
 export const quizQuestionsQuery = (quizId: string) =>
   queryOptions({
     queryKey: ["quiz-questions", quizId],
