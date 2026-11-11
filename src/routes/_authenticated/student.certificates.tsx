@@ -1,7 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useSuspenseQuery } from "@tanstack/react-query";
 import { Award, Printer, ShieldCheck } from "lucide-react";
-import { toast } from "sonner";
 import { DashboardShell, Empty, Panel, StatCard } from "@/components/dash/DashboardShell";
 import { Button } from "@/components/ui/button";
 import { studentHomeQuery } from "@/lib/student.queries";

@@ -120,11 +120,6 @@ function Learn() {
               </li>
             ))}
           </ol>
-          {lessons.length > 0 && (
-            <div className="mt-4 border-t pt-4">
-              <Button asChild variant="outline" className="w-full"><Link to="/student/quizzes/$id" params={{ id: "" }}><PlayCircle /> Skip to quizzes</Link></Button>
-            </div>
-          )}
         </Panel>
       </div>
     </DashboardShell>
