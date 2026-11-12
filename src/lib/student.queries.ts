@@ -68,7 +68,7 @@ export const quizQuestionsQuery = (quizId: string) =>
     queryKey: ["quiz-questions", quizId],
     queryFn: async () => {
       const [{ data: quiz }, { data: questions, error }] = await Promise.all([
-        supabase.from("quizzes").select("id, title, description, pass_mark, courses(title)").eq("id", quizId).maybeSingle(),
+        supabase.from("quizzes").select("id, title, description, pass_mark, course_id, courses(title)").eq("id", quizId).maybeSingle(),
         supabase.rpc("get_quiz_questions", { _quiz_id: quizId }),
       ]);
       if (error) throw error;
