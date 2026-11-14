@@ -91,6 +91,7 @@
     },
   },
   "overrides": {
+    "@rolldown/binding-wasm32-wasi": "1.2.1",
     "rolldown": "1.2.1",
   },
   "packages": {
